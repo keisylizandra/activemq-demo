@@ -1,0 +1,9 @@
+services:
+  activemq:
+    image: apache/activemq-classic:latest
+    container_name: activemq
+    ports:
+      - "61616:61616"   # OpenWire (protocolo nativo / JMS)
+      - "61613:61613"   # STOMP (usado pelos scripts Python)
+      - "8161:8161"     # Console web: http://localhost:8161/admin  (admin / admin)
+    restart: unless-stopped
